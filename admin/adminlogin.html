@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>管理员登录</title>
+<link href="css/css_body.css" rel="stylesheet" type="text/css">
+<link href="css/div.css" rel="stylesheet" type="text/css">
+<style>
+body{line-height:20px;}
+input{
+
+	border:1px solid #CCC;
+	font-size:14px;
+
+}
+div{margin:10px; text-align:center;}
+
+</style>
+<script language="javascript">
+function chform(){
+	if (document.form2.admin_name.value==""){
+		alert("请输入用户名!");
+		document.form2.admin_name.focus();
+		return false;
+		}
+	if (document.form2.admin_password.value==""){
+		alert("请输入密码!");
+		document.form2.admin_password.focus();
+		return false;
+		}
+
+}
+-->
+</script>
+</head>
+
+<body onLoad="form2.admin_name.focus();form2.admin_name.select();">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="login">
+	<div id="logintext"><form action="admin_check.php" method="post" name="form2">
+		<div>用 户：
+			<input name="admin_name" type="text" size="16"></div>
+
+		<div>密 码：
+			<input name="admin_password" type="password" size="16"></div>
+
+		<div id="btn">&nbsp;&nbsp;&nbsp;
+			<input type="submit" class="inputbut" value="进入后台" onClick="return chform();">
+		</div>
+
+	</form></div>
+</div>
+</body>
+</html>

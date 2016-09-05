@@ -1,0 +1,21 @@
+姓名 user-author
+性别 gender M or F
+电话 phone 11
+年级 grade 4
+班级 class 1
+邮箱 email 
+籍贯 location 
+四级成绩 english_4 分数
+六级成绩 english_6 分数 
+计算机水平 一段 text computer
+在校经历、社会实践经历、基础实验室/meta学习经历 一段 text gothrough  
+获奖情况 一段 text jianli
+专业课掌握程度及其他能力 一段 text zhuanye
+ 一段 text  selfintro
+ 
+adminarticle.modify.php  界面  
+adminarticle,modify.handle.php 传递
+article.modify.handle.php
+article.modify.php 
+article.add.php
+article.add.handle.php
