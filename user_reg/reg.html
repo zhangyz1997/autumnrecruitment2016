@@ -3,10 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
 <title>CDMG</title>
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <link href="../default.css" rel="stylesheet" type="text/css" />
-  <style type="text/css">
+ <meta name="keywords" content="" />
+ <meta name="description" content="" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ <!-- <link href="../default.css" rel="stylesheet" type="text/css" /> -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+    body{
+        background: #CCC
+    }
       html{font-size:11px;}
   	fieldset{width:520px; margin: 0 auto;}
   	legend{font-weight:bold; font-size:14px;}
@@ -14,30 +21,76 @@
   	.left{margin-left:80px;}
   	.input{width:150px;}
   	span{color: #666666;}
-    </style>
 
-  </head>
-  <body>
-  <div id="wrapper">
-	  <div id="header">
-	  	<div id="logo">
-	  		<h1><a href="#">注册<sup></sup></a></h1>
-	  		<h2></h2>
-	  	</div>
-		<div id="menu">
-			<ul>
-				<li><a href="../index.html">首页</a></li>
-				<li><a href="reg.html">用户注册</a></li>
-				<li><a href="login.html">用户登录</a></li>
-				<li><a href="../adminlogin.html">管理员入口</a></li>
-			</ul>
-		</div>
-	  </div>
-<table width="100%" height="520" border="0" cellpadding="8" cellspacing="1" bgcolor="#000000">
-	<tr>
- <td width="837" valign="top" bgcolor="#FFFFFF"><table width="900" border="0" cellpadding="8" cellspacing="1" bgcolor="#000000" align=center>
-<script language=JavaScript>
-<!--
+</style>
+
+</head>
+<body>
+
+<h1>COMPUTATIONAL DATA MINING GROUP</h1>
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+    <a class="navbar-brand" href="../index.html">CDMG</a>
+    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#collapse">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    </div>
+    <div class="collapse navbar-collapse" id="collapse">
+		<ul class="nav navbar-nav">
+			<li><a href="../index.html">首页</a></li>
+			<li class="active"><a href="reg.html">用户注册</a></li>
+			<li><a href="login.html">用户登录</a></li>
+			<li><a href="../adminlogin.html">管理员入口</a></li>
+		</ul>
+    </div>
+</div>
+<div class="container-fluid" style="background:white; padding-bottom:20px; margin-bottom:10px">
+<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12" style="background:white;">
+    <h2 class="page-header">用户注册</h2>
+    <form action="reg.php" method="post" role="form" name="RegForm" onSubmit="return InputCheck(this)">
+        <div class="form-group">
+            <label for="username">用户名</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text" name="username" class="form-control" id="username" placeholder="请输入用户名">
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="password">密码</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="password"  class="form-control" name="password" id="password" placeholder="请输入密码">
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="repass">重复密码</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="password"  class="form-control" name="repass" id="repass" placeholder="请再次输入密码">
+            </div>
+        <!-- </div>
+        <div class="form-group">
+            <label for="email">电子邮箱</label> -->
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <!-- <input type="text"  class="form-control" name="email" id="email" placeholder="请输入电子邮箱"> -->
+            <!-- </div> -->
+        <!-- </div> -->
+        <div class="form-group" style="margin-left: 0;">
+            <div class="col-md-4  col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 col-lg-4 col-lg-offset-4">
+             <input type="submit" class="form-control btn-success" name="submit" value="提交注册" style="min-width:80px"></div>
+         </div>
+    </form>
+</div>
+</div>
+<div class="container-fluid">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:center">
+    <foot>
+        版权所有 2017 @CDMG
+    </foot>
+</div>
+</div>
+</body>
+<!-- <script language=JavaScript>
 
 function InputCheck(RegForm)
 {
@@ -59,53 +112,47 @@ function InputCheck(RegForm)
     RegForm.repass.focus();
     return (false);
   }
-/*
-  if (RegForm.email.value == "")
-  {
-    alert("电子邮箱不可为空!");
-    RegForm.email.focus();
-    return (false);
-  }
- */
-}
-
-//-->
-</script>
-
-<!--</head>-->
-<div>
-<fieldset>
-<legend>用户注册</legend>
-<form name="RegForm" method="post" action="reg.php" onSubmit="return InputCheck(this)">
-<p>
-<label for="username" class="label">用户名:</label>
-<input id="username" name="username" type="text" class="input" />
-<span>(必填，3-15字符长度，支持汉字、字母、数字)</span>
-<p/>
-<p>
-<label for="password" class="label">密 码:</label>
-<input id="password" name="password" type="password" class="input" />
-<span>(必填，不得少于6位)</span>
-<p/>
-<p>
-<label for="repass" class="label">重复密码:</label>
-<input id="repass" name="repass" type="password" class="input" />
-<p/>
-<p>
-<!--
-<label for="email" class="label">电子邮箱:</label>
-<input id="email" name="email" type="text" class="input" />
-<span>(必填)</span>
-<p/>
-<p>
--->
-<input type="submit" name="submit" value="  提交注册  " class="left" />
-</p>
-</form>
-</fieldset>
-</div>
-</td>
-</tr>
-</table>
-</body>
+</script> -->
 </html>
+         <!-- </form>
+//     </div>
+//
+// </div>
+// <table width="100%" height="520" border="0" cellpadding="8" cellspacing="1" bgcolor="#000000">
+// 	<tr>
+//  <td width="837" valign="top" bgcolor="#FFFFFF"><table width="900" border="0" cellpadding="8" cellspacing="1" bgcolor="#000000" align=center> -->
+
+<!-- <div>
+// <fieldset>
+// <legend>用户注册</legend>
+// <form name="RegForm" method="post" action="reg.php" onSubmit="return InputCheck(this)">
+// <p>
+// <label for="username" class="label">用户名:</label>
+// <input id="username" name="username" type="text" class="input" />
+// <span>(必填，3-15字符长度，支持汉字、字母、数字)</span>
+// <p/>
+// <p>
+// <label for="password" class="label">密 码:</label>
+// <input id="password" name="password" type="password" class="input" />
+// <span>(必填，不得少于6位)</span>
+// <p/>
+// <p>
+// <label for="repass" class="label">重复密码:</label>
+// <input id="repass" name="repass" type="password" class="input" />
+// <p/>
+// <p> -->
+<!--
+// <label for="email" class="label">电子邮箱:</label>
+// <input id="email" name="email" type="text" class="input" />
+// <span>(必填)</span>
+// <p/>
+// <p>
+// -->
+<!-- <input type="submit" name="submit" value="  提交注册  " class="left" />
+// </p>
+// </form>
+// </fieldset>
+// </div>
+// </td>
+// </tr>
+// </table> -->

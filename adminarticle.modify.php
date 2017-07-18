@@ -19,12 +19,87 @@ if(!isset($_SESSION['userid'])){
 <title>CDMG</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="default.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+    body{
+        background: #CCC
+    }
+      html{font-size:11px;}
+  	fieldset{width:520px; margin: 0 auto;}
+  	legend{font-weight:bold; font-size:14px;}
+  	label{float:left; width:70px; margin-left:10px;}
+  	.left{margin-left:80px;}
+  	.input{width:150px;}
+  	span{color: #666666;}
+
+</style>
 </head>
 <body>
-<div id="wrapper">
+<h1>COMPUTATIONAL DATA MINING GROUP</h1>
+<div class="navbar navbar-inverse" role="navigation">
+<div class="navbar-header">
+<a class="navbar-brand" href="../index.html">CDMG</a>
+<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#collapse">
+    <span class="sr-only">Toggle Navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="collapse">
+	<ul class="nav navbar-nav">
+		<li><a href="../index.html">简历管理</a></li>
+		<li><a href="user_reg/login.php?action=logout">注销登陆</a></li>
+	</ul>
+</div>
+</div>
+<div class="container-fluid" style="background:white; padding-bottom:20px; margin-bottom:10px">
+<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12" style="background:white;">
+    <h2 class="page-header">简历录入</h2>
+    <form action="reg.php" method="post" role="form" name="RegForm" onSubmit="return InputCheck(this)">
+        <div class="form-group">
+            <label for="username">注册账号</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text" name="username" class="form-control" id="username" placeholder="请输入用户名">
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="username">姓名</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text" name="username" class="form-control" id="username" placeholder="请输入用户名">
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="password">密码</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="password"  class="form-control" id="password" placeholder="请输入密码">
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="repass">重复密码</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="password"  class="form-control" name="repass" id="repass" placeholder="请再次输入密码">
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="email">电子邮箱</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text"  class="form-control" name="email" id="email" placeholder="请输入电子邮箱">
+            <!-- </div> -->
+        </div>
+        <div class="form-group" style="margin-left: 0;">
+            <div class="col-md-4  col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 col-lg-4 col-lg-offset-4">
+             <input type="submit" class="form-control btn-success" name="submit" value="提交注册" style="min-width:80px"></div>
+         </div>
+    </form>
+</div>
+</div>
+<!-- <div id="wrapper"> -->
 <!-- start header -->
-<div id="header">
+<!-- <div id="header">
 	<div id="logo">
 		<h1><a href="#">简历修改<sup></sup></a></h1>
 		<h2></h2>
@@ -35,7 +110,7 @@ if(!isset($_SESSION['userid'])){
 			<li><a href="user_reg/login.php?action=logout">注销登陆</a></li>
 		</ul>
 	</div>
-</div>
+</div> -->
 <!-- end header -->
 <table width="100%" height="520" border="0" cellpadding="8" cellspacing="1" bgcolor="#000000">
 <!--
