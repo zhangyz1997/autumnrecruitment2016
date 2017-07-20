@@ -9,7 +9,7 @@ if(!isset($_SESSION['userid'])){
 	require_once('../connect.php');
 	//读取旧信息
 	$id = $_GET['id'];
-	$query = mysqli_query($con,"select * from profile where id=$id");
+	$query = mysqli_query($con,"select * from profile where uid=$id");
 	$data = mysqli_fetch_array($query,MYSQL_ASSOC);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -19,12 +19,143 @@ if(!isset($_SESSION['userid'])){
 <title>CDMG</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="../default.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+    body{
+        background: #CCC
+    }
+      html{font-size:11px;}
+  	fieldset{width:520px; margin: 0 auto;}
+  	legend{font-weight:bold; font-size:14px;}
+  	label{float:left; width:70px; margin-left:10px;}
+  	.left{margin-left:80px;}
+  	.input{width:150px;}
+  	span{color: #666666;}
+</style>
 </head>
 <body>
-<div id="wrapper">
+<h1>COMPUTATIONAL DATA MINING GROUP</h1>
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+    <a class="navbar-brand" href="../index.html">CDMG</a>
+    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#collapse">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    </div>
+    <div class="collapse navbar-collapse" id="collapse">
+		<ul class="nav navbar-nav">
+			<li><a href="../index.html">首页</a></li>
+			<li><a href="../admin/article.add.php">新建简历</a></li>
+			<li><a href="../admin/article.manage.php">简历管理</a></li>
+			<li><a href="../user_reg/login.php?action=logout">注销登陆</a></li>
+		</ul>
+    </div>
+</div>
+<div class="container-fluid" style="background:white; padding-bottom:20px; margin-bottom:10px">
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12" style="background:white;">
+    <h2 class="page-header">简历修改</h2>
+    <form action="article.add.handle.php" method="post" role="form" name="form1" onSubmit="return InputCheck(this)">
+        <div class="form-group">
+            <label for="author">注册账号</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text" name="author" class="form-control" id="author" value="<?php echo $data['author']?>"/>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="username">姓名</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text"  class="form-control" id="username"value="<?php echo $data['usrname']?>"/>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="phone">手机号码</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text"  class="form-control" id="phone"value="<?php echo $data['phone']?>"/>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="grade">年级</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text"  class="form-control" id="grade"value="<?php echo $data['grade']?>"/>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="class">班级</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text"  class="form-control" id="class" value="<?php echo $data['class']?>"/>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="email">电子邮箱</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text"  class="form-control" name="email" id="email" value="<?php echo $data['email']?>"/>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="location"  style="width:100%;">籍贯（省市）</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text"  class="form-control" id="location" value="<?php echo $data['location']?>"/>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="eng_4"  style="width:100%;">英语四级成绩</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text"  class="form-control" id="eng_4" value="<?php echo $data['eng_4']?>"/>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="eng_6"  style="width:100%;">英语六级成绩</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <input type="text"  class="form-control" id="eng_6" value="<?php echo $data['eng_6']?>"/>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="computer"  style="width:100%;">计算机水平</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <textarea type="textarea" rows="3" class="form-control" id="computer"><?php echo $data['computer']?></textarea>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="jingli"  style="width:100%;">在校经历/社会实践经历/基础实验室or meta学习经历</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <textarea type="textarea" rows="3" class="form-control" id="jingli"><?php echo $data['jingli']?></textarea>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="jiangli"  style="width:100%;">获奖情况</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+            <textarea type="textarea" rows="3" class="form-control" id="jiangli"><?php echo $data['jiangli']?></textarea>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="zhuanye"  style="width:100%;">专业课掌握程度及其他能力（统计、PS等）</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+            <textarea type="textarea" rows="3" class="form-control" id="zhuanye"><?php echo $data['zhuanye']?></textarea>
+            <!-- </div> -->
+        </div>
+        <div class="form-group">
+            <label for="selfintro"  style="width:100%;">自我推荐理由、小组建设建议</label>
+            <!-- <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8"> -->
+                <textarea type="textarea" rows="3" class="form-control" id="selfintro"><?php echo $data['selfintro']?></textarea>
+            <!-- </div> -->
+        </div>
+        <div class="form-group" style="margin-left: 0;">
+            <div class="col-md-4  col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 col-lg-4 col-lg-offset-4">
+             <input type="submit" class="form-control btn-success" name="submit" value="提交" style="min-width:80px"></div>
+         </div>
+    </form>
+    </form>
+</div>
+</div>
+<!-- <div id="wrapper"> -->
 <!-- start header -->
-<div id="header">
+<!-- <div id="header">
 	<div id="logo">
 		<h1><a href="#">简历修改<sup></sup></a></h1>
 		<h2></h2>
@@ -37,28 +168,28 @@ if(!isset($_SESSION['userid'])){
 			<li><a href="../user_reg/login.php?action=logout">注销登陆</a></li>
 		</ul>
 	</div>
-</div>
+</div> -->
 <!-- end header -->
-<table width="100%" height="520" border="0" cellpadding="8" cellspacing="1" bgcolor="#000000">
+<!-- <table width="100%" height="520" border="0" cellpadding="8" cellspacing="1" bgcolor="#000000"> -->
 <!--
   <tr>
     <td height="89" colspan="2" bgcolor="#FFFF99"><strong>后台管理系统</strong></td>
   </tr>
   -->
-  <tr>
+  <!-- <tr> -->
 <!--
 	<td width="213" height="287" align="left" valign="top" bgcolor="#FFFF99"><p><a href="article.add.php">发布文章</a></p>
     <p><a href="article.manage.php">管理文章</a></p>      <a href="article.add.php"></a></td>
 -->
-    <td width="837" valign="top" bgcolor="#FFFFFF"><form id="form1" name="form1" method="post" action="article.modify.handle.php">
-    	<input type="hidden" name="id" value="<?php echo $data['id']?>" />
-      <table width="779" border="0" cellpadding="8" cellspacing="1" align=center>
+    <!-- <td width="837" valign="top" bgcolor="#FFFFFF"><form id="form1" name="form1" method="post" action="article.modify.handle.php">
+    	<input type="hidden" name="uid" value="<?php echo $data['uid']?>" />
+      <table width="779" border="0" cellpadding="8" cellspacing="1" align=center> -->
 <!--
 		<tr>
           <td colspan="2" align="center">修改文章</td>
           </tr>
 	  -->
-	  <tr>
+	  <!-- <tr>
 	  <td width="119">
 		  注册账号
 	</td>
@@ -179,12 +310,19 @@ if(!isset($_SESSION['userid'])){
           </tr>
       </table>
     </form></td>
-  </tr>
+  </tr> -->
 <!--
   <tr>
     <td colspan="2" bgcolor="#FFFF99"><strong>版权所有</strong></td>
   </tr>
 -->
-</table>
+<!-- </table> -->
+<div class="container-fluid">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:center">
+    <foot>
+        版权所有 2017 @CDMG
+    </foot>
+</div>
+</div>
 </body>
 </html>

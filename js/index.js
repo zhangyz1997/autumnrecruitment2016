@@ -7,29 +7,29 @@ $(function(){
         screenHeight = $("body").height();
         screenWidth = $("body").width();
         resizer();
-    })        
-    foodSwiper = new Swiper('#food', {
-        pagination: '#foodPagin',
-        paginationClickable: true,
-        keyboardControl: true,
-        mousewheelForceToAxis: true,
-        direction: 'horizontal',
-        onInit: function(foodSwiper){
-            swiperAnimateCache(foodSwiper);
-            //swiperAnimate(foodSwiper);
-        },
-        onSlideChangeStart: function(foodSwiper){
-            $("#food").find("div.ani").each(function(){
-                $(this).removeClass("bounce animated");     //该死的swiper留下的bug
-            })
-        },
-        onSlideChangeEnd: function(foodSwiper){
-            swiperAnimate(foodSwiper);
-        }, 
-        onTransitionEnd: function(foodSwiper){ 
-            swiperAnimate(foodSwiper);
-        }
-    });
+    })
+    // foodSwiper = new Swiper('#food', {
+    //     pagination: '#foodPagin',
+    //     paginationClickable: true,
+    //     keyboardControl: true,
+    //     mousewheelForceToAxis: true,
+    //     direction: 'horizontal',
+    //     onInit: function(foodSwiper){
+    //         swiperAnimateCache(foodSwiper);
+    //         //swiperAnimate(foodSwiper);
+    //     },
+    //     onSlideChangeStart: function(foodSwiper){
+    //         $("#food").find("div.ani").each(function(){
+    //             $(this).removeClass("bounce animated");     //该死的swiper留下的bug
+    //         })
+    //     },
+    //     onSlideChangeEnd: function(foodSwiper){
+    //         swiperAnimate(foodSwiper);
+    //     },
+    //     onTransitionEnd: function(foodSwiper){
+    //         swiperAnimate(foodSwiper);
+    //     }
+    // });
     mainSwiper = new Swiper('#main', {
         keyboardControl: true,
         mousewheelControl: true,
@@ -37,11 +37,11 @@ $(function(){
         onInit: function(mainSwiper){
             swiperAnimateCache(mainSwiper);
             //swiperAnimate(mainSwiper);
-        }, 
-        onSlideChangeEnd: function(mainSwiper){ 
+        },
+        onSlideChangeEnd: function(mainSwiper){
             swiperAnimate(mainSwiper);
         },
-        onTransitionEnd: function(mainSwiper){ 
+        onTransitionEnd: function(mainSwiper){
             swiperAnimate(mainSwiper);
         }
     });
@@ -60,7 +60,7 @@ window.onload = function(){
 function resizer(){
     var height;
     $(".centerBlock").each(function(){
-        height = $(this).height();            
+        height = $(this).height();
         $(this).css("margin-top",(screenHeight-height)/2 + "px");
     })
     var arrowWidth = $(".arrow").width();
