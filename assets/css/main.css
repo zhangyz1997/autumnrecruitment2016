@@ -1,0 +1,247 @@
+body { font: normal 100% Helvetica, Arial, sans-serif; } 
+
+header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;	 
+}
+nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;	      
+}
+section {
+    /*width:350px;*/
+    float:center;
+    padding:10px;	 	 
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;	 	 
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+html, body {
+    position: relative;
+	padding: 0;
+    margin: 0;
+    height: 100%;
+    width:100%;
+}
+#intro {
+    text-align:left;
+	height: 100%;
+    /*width:fit-content;*/
+}
+
+
+#intro h1 {
+    font-family: Arial;
+    margin-left: 11%;
+    margin-top:11.5vh;
+    margin-bottom:10vh;
+	font-size: 4.0vmax;
+	font-weight: 100;
+    line-height: 0;
+	/*width: 500px;*/
+}
+
+#greyside {
+    writing-mode:vertical-lr;
+    text-align:center; 
+    background:grey; 
+    height: 100%; 
+    ms-writing-mode:vertical-lr;
+    font-size: 2.5vw;
+    padding-left:2vmin;
+    color:white;
+    padding-right:2vmin;
+    margin-right:0;
+    right:0; 
+    position:absolute; 
+    width:10%; 
+    align-items:center;
+    justify-content:center
+}
+
+#data h1 {
+    /*padding-top:10vmin;*/
+    color:grey;
+	margin-left:11%;
+    margin-top:11.5vh;
+    position:relative;
+    text-align:left;
+    margin-bottom:10vh;
+    font-family: Arial;
+	font-size: 4.0vmax;
+	font-weight: 100;
+    line-height: 0;
+	/*width: 500px;*/
+}
+
+#intro p {
+    font-family: Arial;
+    margin-left:15%;
+	font-size: 2.1vmax;
+    font-weight: 100;
+    /*padding: 0 0;*/
+    line-height: 3vh;
+	/*width: 1000px;*/
+}
+
+#req {
+    text-align:left;
+	height: 100%;
+    /*width:fit-content;*/
+}
+
+#req img {
+    max-width:100%;
+    width:10%;
+    height:10%;
+}
+
+#req h1 {
+    font-family: Arial;
+    margin-left:11%;
+    margin-top:11.5vh;
+    margin-bottom:12vh;
+	font-size: 4.0vmax;
+	font-weight: 100;
+    line-height: 0;
+}
+
+#req li{
+    font-family: Arial;
+    margin-left:12%;
+	font-size: 2.3vmax;
+	font-weight: 100;
+    line-height: 5vmax;
+    list-style: none;
+}
+
+#req li img{
+    max-width:100%;
+    width:2vw;
+    height:2vw;
+}
+
+
+.container3 span {
+	display: Inline;
+	margin-left: 30px;
+	font-family: Arial;
+	font-size: 30px;
+	line-height: 2.3;
+	vertical-align: center;
+}
+
+button {
+    margin-top: 48px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid white;
+    border-radius: 10px;
+    font-family: Arial;
+    color: white;
+    text-align: center;
+    font-size: 4vmin;
+    height: 10vmin;
+    width: 20vmax;
+}
+
+#last{
+	width:100%;
+    color:grey; 
+    font-size: 3.5vmax; 
+    height:75%;
+    display:flex;
+    flex-direction:column; 
+    justify-content:center; 
+    margin-left: 0vmin;
+    align-items:flex-start;
+}
+
+#last p{
+    text-align: left;
+    padding:0 0;
+    margin: 1vmin 0;
+    margin-left:11%;
+	line-height: 13vmin; 
+}
+
+.arrow{
+	position: absolute;
+    bottom: 30px;
+    left: 50%;
+    right: 50%;
+	width: 40px;
+	cursor: pointer;
+    /*z-index: 3;*/
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.swiper-button-disabled {
+    display:none;
+}
+
+#prev {
+    top:35%;
+}
+
+#next {
+    top:35%;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #last p{
+        text-align: left;
+        padding:0 0;
+        margin: 0 0;
+        margin-left:0%;
+        line-height: 10vmin; 
+    }
+    #last{
+        left:0;
+        margin-left:1vmin;
+    }
+    #req li{
+        margin-left:0;
+    }
+    #canvas1{
+        height:600;
+    }
+    #canvas2{
+        height:600;
+    }
+}
+

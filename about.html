@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About CDMG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <!-- Swiper JS -->
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/swiper.animate.min.js"></script>
+    <!-- BarChart JS -->
+    <script src="assets/js/Chart.bundle.min.js"></script>
+    <!--script src="assets/js/utils.js"></script-->
+    <!-- WOW Scrolling JS -->
+    <!--script src="assets/js/wow.js"></script-->
+    <!--数字滚动动画JS-->
+    <script src="assets/js/countUp.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+        crossorigin="anonymous">
+    <script type="text/javascript">
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location = "about-mobile.html";
+        }
+    </script>
+</head>
+
+<body onresize="repaint()">
+    <script>
+        if (document.body.clientWidth < 1280) {
+            fsize = 14;
+        }
+        else {
+            fsize = 28;
+        }
+    </script>
+    <div class="swiper-container swiper-container-v" style="direction: vertical;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="intro" style="background: linear-gradient(135deg, #ff5db1 0%, rgba(0, 87, 137, 0.7) 100%); color:white; width:100%;justify-content:flex-start;">
+                <section id="intro" style="width:100%">
+                    <h1>Who are we</h1>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0s">我们是CDMG</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s"> 全名: Clinical Data Mining Group</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2s"> 小名: </p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3s"> 诞生于 年</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="4s"> 由八年制师兄师姐自发组建</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="5s"> 我们旨在搭建学习交流平台，建设高效的现代化科研团队</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="6s"> 平时主要进行生物医学大数据挖掘的学习与实战</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="7s"> 以自主学习和操作为主，组内交流为辅</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="8s"> 互相学习，共同进步</p>
+                </section>
+                <img src="assets/img/arrow.png" onclick="swiperV.slideNext()" class="arrow" />
+            </div>
+            <div id="data" class="swiper-slide" style="display: flex; height:100%; justify-content:flex-start; flex-direction:column; align-items:center;">
+                <div style="width:100%;position:relative;left:0;top:0;">
+                    <h1>Our achievements</h1>
+                </div>
+                <div class="swiper-container swiper-container-h" style="width:60%; ">
+                    <div class="swiper-wrapper" style="height:auto;">
+                        <div id="barchart1" class="swiper-slide" style="height:auto;width:40vw;">
+                            <!--section-->
+                            <!--h2>SCI论文数量</h2-->
+                            <canvas id="canvas1" style="display: flex; justify-content: center; align-items: center;"></canvas>
+                            <script>
+                                var barChartData2 = {
+                                    labels: ["已发表", "今年发表", "在投"],
+                                    datasets: [{
+                                        backgroundColor: ["DeepPink", "Limegreen", "DodgerBlue"],
+                                        strokeColor: "rgba(220,220,220,1)",
+                                        data: [43, 11, 6]
+                                    }]
+
+                                };
+                            </script>
+                            <!--/section-->
+                        </div>
+                        <div id="barchart2" class="swiper-slide" style="height:auto;width:40vw;">
+                            <!--section-->
+                            <!--h2>IF</h2-->
+                            <canvas id="canvas2" style="display: flex; justify-content: center; align-items: center;"></canvas>
+                            <script>
+                                var barChartData1 = {
+                                    labels: ["总计", "去年累计"],
+                                    datasets: [{
+                                        backgroundColor: ["Limegreen", "DodgerBlue"],
+                                        strokeColor: "rgba(220,220,220,1)",
+                                        data: [88, 18]
+                                    }]
+
+                                };
+                                window.onload = function () {
+
+                                }
+                            </script>
+                            <!--/section-->
+                        </div>
+                    </div>
+                    <!--div class="swiper-pagination-h"></div-->
+                    <div class="swiper-button-prev swiper-button-black" id="prev"></div>
+                    <div class="swiper-button-next swiper-button-black" id="next"></div>
+                    <img src="assets/img/arrow - purple.png" onclick="swiperV.slideNext()" class="arrow" />
+                </div>
+                <div id="greyside" style="display:none;">
+                    最快于<span id="myTargetElement" style="writing-mode:initial;font-size: 6vw;">15</span>天内发表<span style="writing-mode:initial;font-size: 4vw;">SCI</span>论文
+                </div>
+            </div>
+            <div class="swiper-slide" id="intro" style="background: linear-gradient(135deg, #ff5db1 0%, rgba(0, 87, 137, 0.7) 100%); justify-content:flex-start;">
+                <section id="req" style="text-align:left; color:white; width:100%;">
+                    <h1>Who we want</h1>
+                    <ul class="animated fadeIn">
+                        <li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0s"><img src="assets/img/tick.png"></img>中山医八年制大五以下学生</li>
+                        <li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s"><img src="assets/img/tick.png"></img>对科学有热情，乐于探索，乐于分享</li>
+                        <li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2s"><img src="assets/img/tick.png"></img>认真负责，执行力强</li>
+                        <li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3s"><img src="assets/img/tick.png"></img>抗压能力及心理素质较强</li>
+                        <li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="4s"><img src="assets/img/tick.png"></img>擅长BI/ Meta/ R/ Python/ MySQL/ PS者优先</li>
+                        <li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="5s"><img src="assets/img/tick.png"></img>有学术论文写作、投稿经验者优先</li>
+                    </ul>
+                </section>
+                <img src="assets/img/arrow.png" onclick="swiperV.slideNext()" class="arrow" />
+            </div>
+            <div class="swiper-slide" style="display:flex;flex-direction:column; align-items:center; justify-content:center;">
+                <section id="last">
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0s">If you want to try something new</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s">If you are inspired by us</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2s">If you can meet our all request</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3s">Please do not hesitate to press the button below</p>
+                </section>
+                <div style="width: 100%;background: linear-gradient(135deg, #ff5db1 0%, rgba(0, 87, 137, 0.7) 100%);height:25%" class="ani"
+                    swiper-animate-effect="fadeInUp" swiper-animate-duration="0s" swiper-animate-delay="4s">
+                    <a href="user_reg/reg.html"><button>Join us</button></a>
+                </div>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- Add Pagination -->
+
+    <!--div class="swiper-pagination"></div-->
+    <!--/div-->
+
+
+    <!-- Initialize Swiper -->
+    <script>
+                                var swiperH = new Swiper('.swiper-container-h', {
+                                    //pagination: '.swiper-pagination-h',
+                                    //paginationClickable: true,
+                                    prevButton: '.swiper-button-prev',
+                                    nextButton: '.swiper-button-next',
+                                    direction: 'horizontal',
+                                    onSlideChangeEnd: function () {
+                                        hsbf = document.getElementById("greyside")
+                                        if (hsbf.style.display == "none") {
+                                            hsbf.style.display = "flex";
+                                            var options = {
+                                                useEasing: true,
+                                                useGrouping: true,
+                                                separator: ',',
+                                                decimal: '.',
+                                            };
+                                            var demo = new CountUp("myTargetElement", 200, 15, 0, 3, options);
+                                            demo.start();
+                                        }
+                                        else {
+                                            hsbf.style.display = "none";
+                                        }
+                                        repaint();
+                                    }
+                                });
+                                var swiperV = new Swiper('.swiper-container-v', {
+                                    pagination: '.swiper-pagination-v',
+                                    paginationClickable: true,
+                                    direction: 'vertical',
+                                    mousewheelControl: true,
+                                    spaceBetween: 50,
+                                    onTransitionEnd: function () {
+                                        try {
+                                            window.myBar1.destroy();
+                                            window.myBar2.destroy();
+                                        }
+                                        catch (e) { }
+                                        if (swiperV.activeIndex == 1) {
+                                            repaint()
+                                        }
+                                    },
+                                    onInit: function (swiperV) { //Swiper2.x的初始化是onFirstInit
+                                        swiperAnimateCache(swiperV); //隐藏动画元素 
+                                        swiperAnimate(swiperV); //初始化完成开始动画
+                                    },
+                                    onSlideChangeEnd: function (swiperV) {
+                                        swiperAnimate(swiperV); //每个slide切换结束时也运行当前slide动画
+                                    },
+                                });
+
+                                function repaint() {
+                                    if (document.body.clientWidth < 1280) {
+                                        fsize = 14;
+                                    }
+                                    else {
+                                        fsize = 28;
+                                    }
+                                    try {
+                                        window.myBar1.destroy();
+                                        window.myBar2.destroy();
+                                    }
+                                    catch (e) { }
+                                    var ctx1 = document.getElementById("canvas1").getContext("2d");
+                                    ctx1.canvas.width = document.body.clientWidth * 0.4;
+                                    ctx1.canvas.height = document.body.clientHeight * 0.6;
+                                    window.myBar1 = new Chart(ctx1, {
+                                        type: 'bar',
+                                        data: barChartData2,
+                                        options: {
+                                            "hover": {
+                                                "animationDuration": 0
+                                            },
+                                            "animation": {
+                                                "duration": 3000,
+                                                "onComplete": function () {
+                                                    var chartInstance = this.chart, ctx = this.chart.ctx;
+                                                    ctx.textAlign = 'center';
+                                                    ctx.textBaseline = 'bottom';
+                                                    this.data.datasets.forEach(function (dataset, i) {
+                                                        var meta = chartInstance.controller.getDatasetMeta(i);
+                                                        meta.data.forEach(function (bar, index) {
+                                                            var data = dataset.data[index];
+                                                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                                                        });
+                                                    });
+                                                }
+                                            },
+                                            tooltips: {
+                                                "enabled": false
+                                            },
+                                            responsive: false,
+                                            responsiveAnimationDuration: 80,
+                                            maintainAspectRatio: false,
+                                            scales: {
+                                                xAxes: [{
+                                                    categoryPercentage: 0.9,
+                                                    maxBarThickness: 100,
+                                                    gridLines: {
+                                                        display: false
+                                                    },
+                                                    ticks: {
+                                                        fontSize: fsize
+                                                    }
+                                                }],
+                                                yAxes: [{
+                                                    gridLines: {
+                                                        display: true
+                                                    },
+                                                    ticks: {
+                                                        max: 60,
+                                                        fontSize: fsize
+                                                    }
+                                                }]
+                                            },
+                                            legend: {
+                                                display: false,
+                                            },
+                                            title: {
+                                                display: true,
+                                                fontSize: fsize,
+                                                text: 'SCI论文数量(篇)'
+                                            }
+                                        }
+                                    });
+                                    var ctx2 = document.getElementById("canvas2").getContext("2d");
+                                    ctx2.canvas.width = document.body.clientWidth * 0.4;
+                                    ctx2.canvas.height = document.body.clientHeight * 0.6;
+                                    window.myBar2 = new Chart(ctx2, {
+                                        type: 'bar',
+                                        data: barChartData1,
+                                        options: {
+                                            "hover": {
+                                                "animationDuration": 0
+                                            },
+                                            "animation": {
+                                                "duration": 3000,
+                                                "onComplete": function () {
+                                                    var chartInstance = this.chart, ctx = this.chart.ctx;
+                                                    ctx.textAlign = 'center';
+                                                    ctx.textBaseline = 'bottom';
+                                                    this.data.datasets.forEach(function (dataset, i) {
+                                                        var meta = chartInstance.controller.getDatasetMeta(i);
+                                                        meta.data.forEach(function (bar, index) {
+                                                            var data = dataset.data[index];
+                                                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                                                        });
+                                                    });
+                                                }
+                                            },
+                                            tooltips: {
+                                                "enabled": false
+                                            },
+                                            responsive: false,
+                                            responsiveAnimationDuration: 80,
+                                            maintainAspectRatio: false,
+                                            scales: {
+                                                xAxes: [{
+                                                    categoryPercentage: 0.9,
+                                                    maxBarThickness: 100,
+                                                    gridLines: {
+                                                        display: false
+                                                    },
+                                                    ticks: {
+                                                        fontSize: fsize
+                                                    }
+                                                }],
+                                                yAxes: [{
+                                                    gridLines: {
+                                                        display: true
+                                                    },
+                                                    ticks: {
+                                                        max: 100,
+                                                        fontSize: fsize
+                                                    }
+                                                }]
+                                            },
+                                            legend: {
+                                                display: false,
+                                            },
+                                            title: {
+                                                display: true,
+                                                fontSize: fsize,
+                                                text: 'IF'
+                                            }
+                                        }
+                                    });
+                                    //alert("+1s");
+                                }
+    </script>
+</body>
+
+</html>
