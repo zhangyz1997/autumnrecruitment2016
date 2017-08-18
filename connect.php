@@ -5,7 +5,7 @@
 		echo mysql_error($con);
 	}
 	//选择数据库
-	if(!mysqli_select_db($con,'jxgl')){
+	if(!mysqli_select_db($con,'database')){
 		echo mysql_error($con);
 	}
 	//字符集
