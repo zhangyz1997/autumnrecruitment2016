@@ -132,6 +132,7 @@ html, body {
 #req li{
     font-family: Arial;
     margin-left:0%;
+	margin-right:3%;
 	margin-top:0;
     margin-bottom:3vh;
 	font-size: 3.5vmax;
