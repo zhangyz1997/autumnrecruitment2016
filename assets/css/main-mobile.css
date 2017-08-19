@@ -149,7 +149,7 @@ html, body {
 }
 
 button {
-    margin-top: 11%;
+    margin-top: 12%;
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid white;
     border-radius: 12px;
@@ -163,7 +163,7 @@ button {
 
 #last{
     color:grey; 
-    height:80%;
+    height:77%;
     text-align: left;
 }
 
