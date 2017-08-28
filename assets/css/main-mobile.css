@@ -1,35 +1,16 @@
 body { font: normal 100% Helvetica, Arial, sans-serif; } 
 
-header {
-    background-color:black;
-    color:white;
-    text-align:center;
-    padding:5px;	 
-}
-nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:100px;
-    float:left;
-    padding:5px;	      
-}
 section {
     /*width:350px;*/
     float:center;
     padding:10px;	 	 
 }
-footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-align:center;
-    padding:5px;	 	 
-}
+
 .swiper-container {
     width: 100%;
     height: 100%;
 }
+
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -49,6 +30,7 @@ footer {
     -webkit-align-items: center;
     align-items: center;
 }
+
 html, body {
     position: relative;
 	padding: 0;
@@ -56,6 +38,7 @@ html, body {
     height: 100%;
     width:100%;
 }
+
 #intro {
     text-align:left;
 	height: 100%;
@@ -97,19 +80,22 @@ html, body {
     margin-left:10%;
 	margin-right:3%;
 	margin-top:0;
-    margin-bottom:2.2vh;
-	font-size: 3.5vmax;
+    margin-bottom:2vh;
+	font-size: 3vmax;
     font-weight: 400;
     /*padding: 0 0;*/
-    line-height: 4.5vh;
+    line-height: 3vh;
 	/*width: 1000px;*/
 }
 
 
 
 #req {
+    max-width:85%;
     text-align:left;
-	height: 100%;
+    top: 0;
+    position: relative;
+	/*height: 100%;*/
     /*width:fit-content;*/
 }
 
@@ -132,12 +118,13 @@ html, body {
 #req li{
     font-family: Arial;
     margin-left:0%;
+	margin-right:3%;
 	margin-top:0;
     margin-bottom:3vh;
-	font-size: 3.5vmax;
-    font-weight: 400;
+	font-size: 3vmax;
+    /*font-weight: 400;*/
     /*padding: 0 0;*/
-    line-height: 5.1vh;
+    line-height: 3vh;
     list-style: none;
 }
 
@@ -148,7 +135,7 @@ html, body {
 }
 
 button {
-    margin-top: 11%;
+    margin-top: 12%;
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid white;
     border-radius: 12px;
@@ -157,17 +144,29 @@ button {
     text-align: center;
     font-size: 8vmin;
     height: 12vmin;
-    width: 22vmax;
+    width: auto;
+    min-width: 22vmax;
 }
 
 #last{
     color:grey; 
-    height:80%;
+    height:77%;
     text-align: left;
 }
 
 #greyside{
     line-height: 3.5vmax;
+    display:flex; 
+    flex-direction:column; 
+    height:35%; 
+    justify-content:center;
+    align-items:center; 
+    background:grey;
+    font-size: 6vw;
+    width:100%;
+    bottom:0;
+    position:absolute;
+    color:white
 }
 
 #last p{
@@ -182,22 +181,14 @@ button {
 	/*width: 1000px;*/
 }
 
-.arrow1{
-	position: fixed;
-    bottom: 30px;
-	width: 10%;
+.arrow{
+	position: absolute;
+    bottom: 5vh;
+	width: 10vmin;
 	cursor: pointer;
     /*z-index: 3;*/
     margin-left:45%;
     margin-right: 45%;
-}
-
-.arrow{
-	position: fixed;
-    bottom: 30px;
-	width: 20px;
-	cursor: pointer;
-    /*z-index: 3;*/
 }
 
 #prev {

@@ -1,35 +1,16 @@
 body { font: normal 100% Helvetica, Arial, sans-serif; } 
 
-header {
-    background-color:black;
-    color:white;
-    text-align:center;
-    padding:5px;	 
-}
-nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:100px;
-    float:left;
-    padding:5px;	      
-}
 section {
     /*width:350px;*/
     float:center;
     padding:10px;	 	 
 }
-footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-align:center;
-    padding:5px;	 	 
-}
+
 .swiper-container {
     width: 100%;
     height: 100%;
 }
+
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -49,6 +30,7 @@ footer {
     -webkit-align-items: center;
     align-items: center;
 }
+
 html, body {
     position: relative;
 	padding: 0;
@@ -110,21 +92,23 @@ html, body {
 #intro p {
     font-family: Arial;
     margin-left:15%;
-	font-size: 2.1vmax;
-    font-weight: 100;
+	font-size: 2.5vmax;
+    /*font-weight: 100;*/
     /*padding: 0 0;*/
-    line-height: 3vh;
-	/*width: 1000px;*/
+    line-height: 4.3vmin;
+    margin-top: 0;
+    margin-bottom: 2.3vmin;
+	width: 80%;
 }
 
 #req {
     text-align:left;
-	height: 100%;
+    max-width:90%;
+	/*height: 100%;*/
     /*width:fit-content;*/
 }
 
 #req img {
-    max-width:100%;
     width:10%;
     height:10%;
 }
@@ -144,7 +128,8 @@ html, body {
     margin-left:12%;
 	font-size: 2.3vmax;
 	font-weight: 100;
-    line-height: 5vmax;
+    line-height: 5vmin;
+    margin-bottom: 3vmax;
     list-style: none;
 }
 
@@ -152,16 +137,6 @@ html, body {
     max-width:100%;
     width:2vw;
     height:2vw;
-}
-
-
-.container3 span {
-	display: Inline;
-	margin-left: 30px;
-	font-family: Arial;
-	font-size: 30px;
-	line-height: 2.3;
-	vertical-align: center;
 }
 
 button {
@@ -199,13 +174,13 @@ button {
 
 .arrow{
 	position: absolute;
-    bottom: 30px;
+    bottom: 5vh;
     left: 50%;
     right: 50%;
 	width: 40px;
 	cursor: pointer;
     /*z-index: 3;*/
-    margin-left:auto;
+    margin-left: auto;
     margin-right: auto;
 }
 
@@ -242,6 +217,15 @@ button {
     }
     #canvas2{
         height:600;
+    }
+    .arrow{
+        position: absolute;
+        bottom: 5vh;
+        width: 10vmin;
+        cursor: pointer;
+        /*z-index: 3;*/
+        left:45%;
+        right: 45%;
     }
 }
 
