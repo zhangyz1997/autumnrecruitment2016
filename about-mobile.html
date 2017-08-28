@@ -25,7 +25,7 @@
 <body>
     <div class="swiper-container swiper-container-v" style="direction: vertical;">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" id="intro" style="background: linear-gradient(135deg, #ff5db1 0%, rgba(0, 87, 137, 0.7) 100%); color:white; width:100%;justify-content:flex-start;">
+            <div class="swiper-slide" id="intro" style="background: linear-gradient(135deg, #ff5db1 0%, rgba(0, 87, 137, 0.7) 100%); color:white; width:100%;justify-content:center;align-items:flex-start">
                 <section id="intro" style="width:100%;">
                     <h1>Who are we</h1>
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0s">We are CDMG</p>
@@ -39,7 +39,6 @@
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="7s"> In our team, we mainly usually learn by ourselves, supplemented by communicating with other team members.</p>
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="8s" style="display:none;">互相学习，共同进步</p>
                 </section>
-
                 <img src="assets/img/arrow.png" onclick="swiperV.slideNext()" class="arrow" />
 
             </div>
@@ -91,17 +90,17 @@
                 <div class="swiper-button-prev swiper-button-black" id="prev"></div>
                 <div class="swiper-button-next swiper-button-black" id="next"></div>
                 <div id="greyside">
-                    <span style="margin-bottom:2vmin;">Once we spent</span><br /><span id="myTargetElement" style="font-size: 20vw;">15</span><br
+                    <span style="margin-top:2vmin; margin-bottom:2vmin;">Once we spent</span><br /><span id="myTargetElement" style="font-size: 20vw;">15</span><br
                     />
-                    <span style="margin-top:2vmin;margin-bottom:12vmin;line-height:initial;">days to get an article published<br>on an SCI-indexed journal</span>
+                    <span style="margin-top:1vmin;margin-bottom:1vmin;line-height:initial;">days to get an article published<br>on an SCI-indexed journal</span>
+                    <img src="assets/img/arrow.png" onclick="swiperV.slideNext()" style="width: 7%">
                 </div>
-                <img src="assets/img/arrow.png" onclick="swiperV.slideNext()" style="position: absolute; bottom:7vmin; width: 10%">
             </div>
 
-            <div class="swiper-slide" style="background: linear-gradient(135deg, #ff5db1 0%, rgba(0, 87, 137, 0.7) 100%); justify-content:flex-start; align-items:flex-start">
-                <section id="req" style="text-align:left; color:white; width:100%;">
+            <div class="swiper-slide" style="background: linear-gradient(135deg, #ff5db1 0%, rgba(0, 87, 137, 0.7) 100%); justify-content:center; align-items:flex-start">
+                <section id="req">
                     <h1>Who we want</h1>
-                    <ul class="animated fadeIn">
+                    <ul class="animated fadeIn" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
                         <li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0s"><img src="assets/img/tick.png"></img>SYSU students under grade 5 in the eight-year program of clinical
                             medicine</li>
                         <li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s"><img src="assets/img/tick.png"></img>Responsible and efficient troubleshooters with mental toughness
