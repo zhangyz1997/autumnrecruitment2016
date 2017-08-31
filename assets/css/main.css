@@ -69,7 +69,7 @@ html, body {
     margin-right:0;
     right:0; 
     position:absolute; 
-    width:10%; 
+    max-width:10%; 
     align-items:center;
     justify-content:center
 }
@@ -81,7 +81,7 @@ html, body {
     margin-top:11.5vh;
     position:relative;
     text-align:left;
-    margin-bottom:8vh;
+    margin-bottom:5vh;
     font-family: Arial;
 	font-size: 3.6vmax;
 	font-weight: 100;

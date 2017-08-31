@@ -30,8 +30,8 @@
                     <h1>Who are we</h1>
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0s">We are CDMG</p>
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s"> Full name: Computational Data Mining Group</p>
-                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2s"> Nick name: </p>
-                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3s"> Born in </p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2s"> Nick name: Game of data</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3s"> Born in 2014</p>
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="4s"> Set up by senior students in the eight-year program of clinical medicine major</p>
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="5s"> Aiming at providing a platform for studying and communicating, constituting a modernized research team
                         of high efficiency</p>
@@ -48,7 +48,7 @@
                 <div style="width:100%;position:relative;left:0;top:0;height:15%;">
                     <h1>Our achievements</h1>
                 </div>
-                <div id="barchart1" style="height:auto;width:80%;align-self:center;">
+                <div id="barchart1" style="height:auto;width:90%;align-self:center;">
                     <canvas id="canvas1" style="display: flex; justify-content: center; align-items: center;align-self:center"></canvas>
                     <script>
                         var barChartData2 = {
@@ -58,7 +58,7 @@
                                     label: 'Paper',
                                     yAxesGroup: 'Paper',
                                     backgroundColor: ["DeepPink", "Limegreen", "DodgerBlue"],
-                                    data: [9, 8, 6.75]
+                                    data: [9, 8, 8.99]
                                 }
                             ]
 
@@ -166,7 +166,6 @@
                                     }
                                     catch (e) { }
                                     var ctx1 = document.getElementById("canvas1").getContext("2d");
-                                    //ctx1.canvas.width = document.body.clientwidth / 2;
                                     ctx1.canvas.height = document.body.clientHeight * 0.4;
                                     window.myBar1 = new Chart(ctx1, {
                                         type: 'bar',
@@ -185,7 +184,7 @@
                                                         var meta = chartInstance.controller.getDatasetMeta(i);
                                                         meta.data.forEach(function (bar, index) {
                                                             var data = dataset.data[index];
-                                                            if (data == 6.75) {
+                                                            if (data == 8.99) {
                                                                 var data = 27;
                                                             }
                                                             ctx.fillText(data, bar._model.x, bar._model.y - 5);
@@ -201,8 +200,8 @@
                                             maintainAspectRatio: false,
                                             scales: {
                                                 xAxes: [{
-                                                    categoryPercentage: 0.9,
-                                                    maxBarThickness: 100,
+                                                    categoryPercentage: 0.5,
+                                                    maxBarThickness: 40,
                                                     gridLines: {
                                                         display: false
                                                     },
@@ -239,7 +238,7 @@
                                                         display: false
                                                     },
                                                     ticks: {
-                                                        max: 40,
+                                                        max: 30,
                                                         min: 0,
                                                         fontSize: fsize
                                                     }
@@ -252,7 +251,8 @@
                                             title: {
                                                 display: true,
                                                 fontSize: fsize - 1,
-                                                text: 'Major Achievements Last Year'
+                                                text: 'Major Achievements Last Year',
+                                                padding: fsize + 2
                                             }
                                         }
                                     });

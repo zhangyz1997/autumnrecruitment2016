@@ -80,11 +80,11 @@ html, body {
     margin-left:10%;
 	margin-right:3%;
 	margin-top:0;
-    margin-bottom:1.5vh;
+    margin-bottom:1.2vh;
 	font-size: 3vmax;
     font-weight: 400;
     /*padding: 0 0;*/
-    line-height: 4vh;
+    line-height: 3.5vh;
 	/*width: 1000px;*/
 }
 
@@ -128,10 +128,10 @@ html, body {
 	margin-right:5%;
 	margin-top:0;
     margin-bottom:3vh;
-	font-size: 3vmax;
+	font-size: 3.2vmax;
     /*font-weight: 400;*/
     /*padding: 0 0;*/
-    line-height: 4.5vh;
+    line-height: 4vh;
     list-style: none;
     width:100%;
 }
