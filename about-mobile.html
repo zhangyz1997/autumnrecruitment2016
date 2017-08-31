@@ -48,51 +48,27 @@
                 <div style="width:100%;position:relative;left:0;top:0;height:15%;">
                     <h1>Our achievements</h1>
                 </div>
-                <div class="swiper-container swiper-container-h" style="width:70%; height:auto;">
-                    <div class="swiper-wrapper" style="height:auto;">
-                        <div id="barchart1" class="swiper-slide" style="height:auto;">
-                            <!--section-->
-                            <!--h2>SCI论文数量</h2-->
-                            <canvas id="canvas1" style="display: flex; justify-content: center; align-items: center; "></canvas>
-                            <script>
-                                var barChartData2 = {
-                                    labels: ["已发表", "今年发表", "在投"],
-                                    datasets: [{
-                                        backgroundColor: ["DeepPink", "Limegreen", "DodgerBlue"],
-                                        strokeColor: "rgba(220,220,220,1)",
-                                        data: [43, 11, 6]
-                                    }]
+                <div id="barchart1" style="height:auto;width:80%;align-self:center;">
+                    <canvas id="canvas1" style="display: flex; justify-content: center; align-items: center;align-self:center"></canvas>
+                    <script>
+                        var barChartData2 = {
+                            labels: [["Papers", "Published"], ["Papers", "Under", "Review"], ["Total", "IF"]],
+                            datasets: [
+                                {
+                                    label: 'Paper',
+                                    yAxesGroup: 'Paper',
+                                    backgroundColor: ["DeepPink", "Limegreen", "DodgerBlue"],
+                                    data: [9, 8, 6.75]
+                                }
+                            ]
 
-                                };
-                            </script>
-                            <!--/section-->
-                        </div>
-                        <div id="barchart2" class="swiper-slide" style="height:auto;">
-                            <!--section-->
-                            <!--h2>IF</h2-->
-                            <canvas id="canvas2" style="display: flex; justify-content:space-around; align-items:center;"></canvas>
-                            <script>
-                                var barChartData1 = {
-                                    labels: ["总计", "去年累计"],
-                                    datasets: [{
-                                        backgroundColor: ["Limegreen", "DodgerBlue"],
-                                        strokeColor: "rgba(220,220,220,1)",
-                                        data: [88, 18]
-                                    }]
-
-                                };
-                            </script>
-                            <!--/section-->
-                        </div>
-                    </div>
-                    <!--div class="swiper-pagination-h"></div-->
+                        };
+                    </script>
                 </div>
-                <div class="swiper-button-prev swiper-button-black" id="prev"></div>
-                <div class="swiper-button-next swiper-button-black" id="next"></div>
                 <div id="greyside">
-                    <span style="margin-top:2vmin; margin-bottom:2vmin;">Once we spent</span><br /><span id="myTargetElement" style="font-size: 20vw;">15</span><br
+                    <span style="margin-top:2vmin; margin-bottom:2vmin;">Once we spent only</span><br /><span id="myTargetElement" style="font-size: 20vw;">15</span><br
                     />
-                    <span style="margin-top:1vmin;margin-bottom:1vmin;line-height:initial;">days to get an article published<br>on an SCI-indexed journal</span>
+                    <span style="margin-top:1vmin;margin-bottom:1vmin;line-height:initial;">days getting an article published<br>on an SCI-indexed journal</span>
                     <img src="assets/img/arrow.png" onclick="swiperV.slideNext()" style="width: 7%">
                 </div>
             </div>
@@ -176,15 +152,17 @@
 
                                 function repaint() {
                                     //alert('+1s');
-                                    if (document.body.clientWidth < 769) {
-                                        fsize = 14;
+                                    if (document.body.clientWidth < 350) {
+                                        fsize = 12;
+                                    }
+                                    else if (document.body.clientWidth < 700) {
+                                        fsize = 15;
                                     }
                                     else {
                                         fsize = 28;
                                     }
                                     try {
                                         window.myBar1.destroy();
-                                        window.myBar2.destroy();
                                     }
                                     catch (e) { }
                                     var ctx1 = document.getElementById("canvas1").getContext("2d");
@@ -207,6 +185,9 @@
                                                         var meta = chartInstance.controller.getDatasetMeta(i);
                                                         meta.data.forEach(function (bar, index) {
                                                             var data = dataset.data[index];
+                                                            if (data == 6.75) {
+                                                                var data = 27;
+                                                            }
                                                             ctx.fillText(data, bar._model.x, bar._model.y - 5);
                                                         });
                                                     });
@@ -220,92 +201,58 @@
                                             maintainAspectRatio: false,
                                             scales: {
                                                 xAxes: [{
+                                                    categoryPercentage: 0.9,
                                                     maxBarThickness: 100,
                                                     gridLines: {
                                                         display: false
                                                     },
                                                     ticks: {
-                                                        fontSize: fsize
+                                                        fontSize: fsize - 2
                                                     }
                                                 }],
                                                 yAxes: [{
+                                                    id: 'Paper',
+                                                    position: 'left',
+                                                    scaleLabel: {
+                                                        display: true,
+                                                        labelString: 'Number of Papers',
+                                                        fontSize: fsize - 1,
+                                                    },
                                                     gridLines: {
-                                                        display: true
+                                                        display: false
                                                     },
                                                     ticks: {
-                                                        max: 60,
+                                                        max: 10,
+                                                        min: 0,
                                                         fontSize: fsize
                                                     }
-                                                }]
-                                            },
-                                            legend: {
-                                                display: false,
-                                            },
-                                            title: {
-                                                display: true,
-                                                fontSize: fsize,
-                                                text: 'SCI论文数量'
-                                            }
-                                        }
-                                    });
-                                    var ctx2 = document.getElementById("canvas2").getContext("2d");
-                                    //ctx2.canvas.width = document.body.clientwidth / 2;
-                                    ctx2.canvas.height = document.body.clientHeight * 0.4;
-                                    window.myBar2 = new Chart(ctx2, {
-                                        type: 'bar',
-                                        data: barChartData1,
-                                        options: {
-                                            "hover": {
-                                                "animationDuration": 0
-                                            },
-                                            "animation": {
-                                                "duration": 3000,
-                                                "onComplete": function () {
-                                                    var chartInstance = this.chart, ctx = this.chart.ctx;
-                                                    ctx.textAlign = 'center';
-                                                    ctx.textBaseline = 'bottom';
-                                                    this.data.datasets.forEach(function (dataset, i) {
-                                                        var meta = chartInstance.controller.getDatasetMeta(i);
-                                                        meta.data.forEach(function (bar, index) {
-                                                            var data = dataset.data[index];
-                                                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
-                                                        });
-                                                    });
+                                                },
+                                                {
+                                                    id: 'IF',
+                                                    position: 'right',
+                                                    scaleLabel: {
+                                                        display: true,
+                                                        labelString: 'Impact Factors',
+                                                        fontSize: fsize,
+                                                    },
+                                                    gridLines: {
+                                                        display: false
+                                                    },
+                                                    ticks: {
+                                                        max: 40,
+                                                        min: 0,
+                                                        fontSize: fsize
+                                                    }
                                                 }
-                                            },
-                                            tooltips: {
-                                                "enabled": false
-                                            },
-                                            responsive: true,
-                                            responsiveAnimationDuration: 80,
-                                            maintainAspectRatio: false,
-                                            scales: {
-                                                xAxes: [{
-                                                    maxBarThickness: 100,
-                                                    gridLines: {
-                                                        display: false
-                                                    },
-                                                    ticks: {
-                                                        fontSize: fsize + 2
-                                                    }
-                                                }],
-                                                yAxes: [{
-                                                    gridLines: {
-                                                        display: true
-                                                    },
-                                                    ticks: {
-                                                        max: 100,
-                                                        fontSize: fsize
-                                                    }
-                                                }]
+                                                ]
                                             },
                                             legend: {
                                                 display: false,
                                             },
                                             title: {
                                                 display: true,
-                                                fontSize: fsize,
-                                                text: 'IF'
+                                                fontSize: fsize - 1,
+                                                text: 'Major Achievements Last Year'
                                             }
                                         }
                                     });

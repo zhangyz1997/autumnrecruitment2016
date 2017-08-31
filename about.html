@@ -46,10 +46,12 @@
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2s"> Nick name: </p>
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3s"> Born in </p>
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="4s"> Set up by senior students in the eight-year program of clinical medicine major</p>
-                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="5s"> Aiming at providing a platform for studying and communicating, constituting a modernized research team of high efficiency</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="5s"> Aiming at providing a platform for studying and communicating, constituting a modernized research team
+                        of high efficiency</p>
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="6s"> we focus on big data mining in the biomedical area</p>
                     <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="7s"> In our team, we mainly usually learn by ourselves, supplemented by communicating with other team members.</p>
-                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="8s" style="display:none;"> 互相学习，共同进步</p>
+                    <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="8s" style="display:none;">
+                    互相学习，共同进步</p>
                 </section>
                 <img src="assets/img/arrow.png" onclick="swiperV.slideNext()" class="arrow" />
             </div>
@@ -57,53 +59,27 @@
                 <div style="width:100%;position:relative;left:0;top:0;">
                     <h1>Our achievements</h1>
                 </div>
-                <div class="swiper-container swiper-container-h" style="width:60%; ">
-                    <div class="swiper-wrapper" style="height:auto;">
-                        <div id="barchart1" class="swiper-slide" style="height:auto;width:40vw;">
-                            <!--section-->
-                            <!--h2>SCI论文数量</h2-->
-                            <canvas id="canvas1" style="display: flex; justify-content: center; align-items: center;"></canvas>
-                            <script>
-                                var barChartData2 = {
-                                    labels: ["已发表", "今年发表", "在投"],
-                                    datasets: [{
-                                        backgroundColor: ["DeepPink", "Limegreen", "DodgerBlue"],
-                                        strokeColor: "rgba(220,220,220,1)",
-                                        data: [43, 11, 6]
-                                    }]
-
-                                };
-                            </script>
-                            <!--/section-->
-                        </div>
-                        <div id="barchart2" class="swiper-slide" style="height:auto;width:40vw;">
-                            <!--section-->
-                            <!--h2>IF</h2-->
-                            <canvas id="canvas2" style="display: flex; justify-content: center; align-items: center;"></canvas>
-                            <script>
-                                var barChartData1 = {
-                                    labels: ["总计", "去年累计"],
-                                    datasets: [{
-                                        backgroundColor: ["Limegreen", "DodgerBlue"],
-                                        strokeColor: "rgba(220,220,220,1)",
-                                        data: [88, 18]
-                                    }]
-
-                                };
-                                window.onload = function () {
-
+                <div id="barchart1" style="height:auto;width:65%;">
+                    <canvas id="canvas1" style="display: flex; justify-content: center; align-items: center;"></canvas>
+                    <script>
+                        var barChartData2 = {
+                            labels: ["Papers Published", "Papers Under Review", "Total IF"],
+                            datasets: [
+                                {
+                                    label: 'Paper',
+                                    yAxesGroup: 'Paper',
+                                    backgroundColor: ["DeepPink", "Limegreen", "DodgerBlue"],
+                                    data: [9, 8, 6.75]
                                 }
-                            </script>
-                            <!--/section-->
-                        </div>
-                    </div>
-                    <!--div class="swiper-pagination-h"></div-->
-                    <div class="swiper-button-prev swiper-button-black" id="prev"></div>
-                    <div class="swiper-button-next swiper-button-black" id="next"></div>
-                    <img src="assets/img/arrow - purple.png" onclick="swiperV.slideNext()" class="arrow" />
+                            ]
+
+                        };
+                    </script>
                 </div>
-                <div id="greyside" style="display:none;">
-                    最快于<span id="myTargetElement" style="writing-mode:initial;font-size: 6vw;">15</span>天内发表<span style="writing-mode:initial;font-size: 4vw;">SCI</span>论文
+                <img src="assets/img/arrow - purple.png" onclick="swiperV.slideNext()" class="arrow" />
+                <div id="greyside" style="display:flex;">
+                    Once we spent only
+                    <div id="myTargetElement" style="writing-mode:initial;font-size: 6vw;">15</div>days getting an article published on a <span style="writing-mode:initial;font-size: 4vw;">SCI</span>journal
                 </div>
             </div>
             <div class="swiper-slide" id="intro" style="background: linear-gradient(135deg, #ff5db1 0%, rgba(0, 87, 137, 0.7) 100%); justify-content:flex-start; align-items:flex-start">
@@ -111,7 +87,8 @@
                     <h1>Who we want</h1>
                     <ul class="animated fadeIn">
                         <li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0s"><img src="assets/img/tick.png"></img>SYSU students under grade 5 in the eight-year program of clinical
-                            medicine</li>
+                            medicine
+                        </li>
                         <li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s"><img src="assets/img/tick.png"></img>Responsible and efficient troubleshooters with mental toughness
                             and strong resistance of pressure</li>
                         <li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2s"><img src="assets/img/tick.png"></img>Passionate geeks in science with willingness for exploration
@@ -145,194 +122,143 @@
 
     <!-- Initialize Swiper -->
     <script>
-                                var swiperH = new Swiper('.swiper-container-h', {
-                                    //pagination: '.swiper-pagination-h',
-                                    //paginationClickable: true,
-                                    prevButton: '.swiper-button-prev',
-                                    nextButton: '.swiper-button-next',
-                                    direction: 'horizontal',
-                                    onSlideChangeEnd: function () {
-                                        hsbf = document.getElementById("greyside")
-                                        if (hsbf.style.display == "none") {
-                                            hsbf.style.display = "flex";
-                                            var options = {
-                                                useEasing: true,
-                                                useGrouping: true,
-                                                separator: ',',
-                                                decimal: '.',
-                                            };
-                                            var demo = new CountUp("myTargetElement", 200, 15, 0, 3, options);
-                                            demo.start();
-                                        }
-                                        else {
-                                            hsbf.style.display = "none";
-                                        }
-                                        repaint();
-                                    }
-                                });
-                                var swiperV = new Swiper('.swiper-container-v', {
-                                    pagination: '.swiper-pagination-v',
-                                    paginationClickable: true,
-                                    direction: 'vertical',
-                                    mousewheelControl: true,
-                                    spaceBetween: 50,
-                                    onTransitionEnd: function () {
-                                        try {
-                                            window.myBar1.destroy();
-                                            window.myBar2.destroy();
-                                        }
-                                        catch (e) { }
-                                        if (swiperV.activeIndex == 1) {
-                                            repaint()
-                                        }
-                                    },
-                                    onInit: function (swiperV) { //Swiper2.x的初始化是onFirstInit
-                                        swiperAnimateCache(swiperV); //隐藏动画元素 
-                                        swiperAnimate(swiperV); //初始化完成开始动画
-                                    },
-                                    onSlideChangeEnd: function (swiperV) {
-                                        swiperAnimate(swiperV); //每个slide切换结束时也运行当前slide动画
-                                    },
-                                });
-
-                                function repaint() {
-                                    if (document.body.clientWidth < 1280) {
-                                        fsize = 14;
-                                    }
-                                    else {
-                                        fsize = 28;
-                                    }
-                                    try {
-                                        window.myBar1.destroy();
-                                        window.myBar2.destroy();
-                                    }
-                                    catch (e) { }
-                                    var ctx1 = document.getElementById("canvas1").getContext("2d");
-                                    ctx1.canvas.width = document.body.clientWidth * 0.4;
-                                    ctx1.canvas.height = document.body.clientHeight * 0.6;
-                                    window.myBar1 = new Chart(ctx1, {
-                                        type: 'bar',
-                                        data: barChartData2,
-                                        options: {
-                                            "hover": {
-                                                "animationDuration": 0
-                                            },
-                                            "animation": {
-                                                "duration": 3000,
-                                                "onComplete": function () {
-                                                    var chartInstance = this.chart, ctx = this.chart.ctx;
-                                                    ctx.textAlign = 'center';
-                                                    ctx.textBaseline = 'bottom';
-                                                    this.data.datasets.forEach(function (dataset, i) {
-                                                        var meta = chartInstance.controller.getDatasetMeta(i);
-                                                        meta.data.forEach(function (bar, index) {
-                                                            var data = dataset.data[index];
-                                                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
-                                                        });
-                                                    });
-                                                }
-                                            },
-                                            tooltips: {
-                                                "enabled": false
-                                            },
-                                            responsive: false,
-                                            responsiveAnimationDuration: 80,
-                                            maintainAspectRatio: false,
-                                            scales: {
-                                                xAxes: [{
-                                                    categoryPercentage: 0.9,
-                                                    maxBarThickness: 100,
-                                                    gridLines: {
-                                                        display: false
-                                                    },
-                                                    ticks: {
-                                                        fontSize: fsize
-                                                    }
-                                                }],
-                                                yAxes: [{
-                                                    gridLines: {
-                                                        display: true
-                                                    },
-                                                    ticks: {
-                                                        max: 60,
-                                                        fontSize: fsize
-                                                    }
-                                                }]
-                                            },
-                                            legend: {
-                                                display: false,
-                                            },
-                                            title: {
-                                                display: true,
-                                                fontSize: fsize,
-                                                text: 'SCI论文数量(篇)'
-                                            }
-                                        }
-                                    });
-                                    var ctx2 = document.getElementById("canvas2").getContext("2d");
-                                    ctx2.canvas.width = document.body.clientWidth * 0.4;
-                                    ctx2.canvas.height = document.body.clientHeight * 0.6;
-                                    window.myBar2 = new Chart(ctx2, {
-                                        type: 'bar',
-                                        data: barChartData1,
-                                        options: {
-                                            "hover": {
-                                                "animationDuration": 0
-                                            },
-                                            "animation": {
-                                                "duration": 3000,
-                                                "onComplete": function () {
-                                                    var chartInstance = this.chart, ctx = this.chart.ctx;
-                                                    ctx.textAlign = 'center';
-                                                    ctx.textBaseline = 'bottom';
-                                                    this.data.datasets.forEach(function (dataset, i) {
-                                                        var meta = chartInstance.controller.getDatasetMeta(i);
-                                                        meta.data.forEach(function (bar, index) {
-                                                            var data = dataset.data[index];
-                                                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
-                                                        });
-                                                    });
-                                                }
-                                            },
-                                            tooltips: {
-                                                "enabled": false
-                                            },
-                                            responsive: false,
-                                            responsiveAnimationDuration: 80,
-                                            maintainAspectRatio: false,
-                                            scales: {
-                                                xAxes: [{
-                                                    categoryPercentage: 0.9,
-                                                    maxBarThickness: 100,
-                                                    gridLines: {
-                                                        display: false
-                                                    },
-                                                    ticks: {
-                                                        fontSize: fsize
-                                                    }
-                                                }],
-                                                yAxes: [{
-                                                    gridLines: {
-                                                        display: true
-                                                    },
-                                                    ticks: {
-                                                        max: 100,
-                                                        fontSize: fsize
-                                                    }
-                                                }]
-                                            },
-                                            legend: {
-                                                display: false,
-                                            },
-                                            title: {
-                                                display: true,
-                                                fontSize: fsize,
-                                                text: 'IF'
-                                            }
-                                        }
-                                    });
-                                    //alert("+1s");
+                        var swiperV = new Swiper('.swiper-container-v', {
+                            pagination: '.swiper-pagination-v',
+                            paginationClickable: true,
+                            direction: 'vertical',
+                            mousewheelControl: true,
+                            spaceBetween: 50,
+                            onTransitionEnd: function () {
+                                try {
+                                    window.myBar1.destroy();
+                                    window.myBar2.destroy();
                                 }
+                                catch (e) { }
+                                if (swiperV.activeIndex == 1) {
+                                    repaint()
+                                }
+                            },
+                            onInit: function (swiperV) { //Swiper2.x的初始化是onFirstInit
+                                swiperAnimateCache(swiperV); //隐藏动画元素 
+                                swiperAnimate(swiperV); //初始化完成开始动画
+                            },
+                            onSlideChangeEnd: function (swiperV) {
+                                swiperAnimate(swiperV); //每个slide切换结束时也运行当前slide动画
+                                var options = {
+                                    useEasing: true,
+                                    useGrouping: true,
+                                    separator: ',',
+                                    decimal: '.',
+                                };
+                                var demo = new CountUp("myTargetElement", 200, 15, 0, 3, options);
+                                demo.start();
+                            },
+                        });
+
+                        function repaint() {
+                            if (document.body.clientWidth < 1280) {
+                                fsize = 14;
+                            }
+                            else {
+                                fsize = 28;
+                            }
+                            try {
+                                window.myBar1.destroy();
+                            }
+                            catch (e) { }
+                            var ctx1 = document.getElementById("canvas1").getContext("2d");
+                            ctx1.canvas.width = document.body.clientWidth * 0.6;
+                            ctx1.canvas.height = document.body.clientHeight * 0.6;
+                            window.myBar1 = new Chart(ctx1, {
+                                type: 'bar',
+                                data: barChartData2,
+                                options: {
+                                    "hover": {
+                                        "animationDuration": 0
+                                    },
+                                    "animation": {
+                                        "duration": 3000,
+                                        "onComplete": function () {
+                                            var chartInstance = this.chart, ctx = this.chart.ctx;
+                                            ctx.textAlign = 'center';
+                                            ctx.textBaseline = 'bottom';
+                                            this.data.datasets.forEach(function (dataset, i) {
+                                                var meta = chartInstance.controller.getDatasetMeta(i);
+                                                meta.data.forEach(function (bar, index) {
+                                                    var data = dataset.data[index];
+                                                    if (data == 6.75) {
+                                                        var data = 27;
+                                                    }
+                                                    ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                                                });
+                                            });
+                                        }
+                                    },
+                                    tooltips: {
+                                        "enabled": false
+                                    },
+                                    responsive: false,
+                                    responsiveAnimationDuration: 80,
+                                    maintainAspectRatio: false,
+                                    scales: {
+                                        xAxes: [{
+                                            categoryPercentage: 0.9,
+                                            maxBarThickness: 100,
+                                            gridLines: {
+                                                display: false
+                                            },
+                                            ticks: {
+                                                fontSize: fsize - 4
+                                            }
+                                        }],
+                                        yAxes: [{
+                                            id: 'Paper',
+                                            position: 'left',
+                                            scaleLabel: {
+                                                display: true,
+                                                labelString: 'Number of Papers',
+                                                fontSize: fsize - 3,
+                                            },
+                                            gridLines: {
+                                                display: false
+                                            },
+                                            ticks: {
+                                                max: 10,
+                                                min: 0,
+                                                fontSize: fsize
+                                            }
+                                        },
+                                        {
+                                            id: 'IF',
+                                            position: 'right',
+                                            scaleLabel: {
+                                                display: true,
+                                                labelString: 'Impact Factors',
+                                                fontSize: fsize - 2,
+                                            },
+                                            gridLines: {
+                                                display: false
+                                            },
+                                            ticks: {
+                                                max: 40,
+                                                min: 0,
+                                                fontSize: fsize
+                                            }
+                                        }
+                                        ]
+                                    },
+                                    legend: {
+                                        display: false,
+                                    },
+                                    title: {
+                                        display: true,
+                                        fontSize: fsize,
+                                        text: 'Major Achievements Last Year'
+                                    }
+                                }
+                            });
+                            //alert("+1s");
+                        }
     </script>
 </body>
 

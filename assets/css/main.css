@@ -47,21 +47,21 @@ html, body {
 
 #intro h1 {
     font-family: Arial;
-    margin-left: 11%;
+    margin-left: 7%;
     margin-top:11.5vh;
-    margin-bottom:10vh;
-	font-size: 4.0vmax;
+    margin-bottom:8vh;
+	font-size: 3.6vmax;
 	font-weight: 100;
     line-height: 0;
 	/*width: 500px;*/
 }
 
 #greyside {
-    writing-mode:vertical-lr;
+    
     text-align:center; 
     background:grey; 
     height: 100%; 
-    ms-writing-mode:vertical-lr;
+    flex-direction: column;
     font-size: 2.5vw;
     padding-left:2vmin;
     color:white;
@@ -77,13 +77,13 @@ html, body {
 #data h1 {
     /*padding-top:10vmin;*/
     color:grey;
-	margin-left:11%;
+	margin-left:7%;
     margin-top:11.5vh;
     position:relative;
     text-align:left;
-    margin-bottom:10vh;
+    margin-bottom:8vh;
     font-family: Arial;
-	font-size: 4.0vmax;
+	font-size: 3.6vmax;
 	font-weight: 100;
     line-height: 0;
 	/*width: 500px;*/
@@ -91,11 +91,11 @@ html, body {
 
 #intro p {
     font-family: Arial;
-    margin-left:15%;
-	font-size: 2.5vmax;
+    margin-left:11%;
+	font-size: 2.1vmax;
     /*font-weight: 100;*/
     /*padding: 0 0;*/
-    line-height: 4.3vmin;
+    line-height: 5.3vmin;
     margin-top: 0;
     margin-bottom: 2.3vmin;
 	width: 80%;
@@ -115,10 +115,10 @@ html, body {
 
 #req h1 {
     font-family: Arial;
-    margin-left:11%;
+    margin-left:7%;
     margin-top:11.5vh;
-    margin-bottom:12vh;
-	font-size: 4.0vmax;
+    margin-bottom:10vh;
+	font-size: 3.6vmax;
 	font-weight: 100;
     line-height: 0;
 }
@@ -128,8 +128,8 @@ html, body {
     margin-left:12%;
 	font-size: 2.3vmax;
 	font-weight: 100;
-    line-height: 5vmin;
-    margin-bottom: 3vmax;
+    line-height: 6.3vmin;
+    margin-bottom: 2.4vmax;
     list-style: none;
 }
 
